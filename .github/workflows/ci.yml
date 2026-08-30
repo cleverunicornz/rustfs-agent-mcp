@@ -18,7 +18,8 @@ jobs:
       - name: Install pinned Rust toolchain
         run: |
           curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs \
-            | sh -s -- -y --profile minimal --default-toolchain 1.98.0
+            | sh -s -- -y --profile minimal --default-toolchain 1.98.0 \
+                --component rustfmt --component clippy
           echo "$HOME/.cargo/bin" >> "$GITHUB_PATH"
 
       - name: Format
